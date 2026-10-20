@@ -1,5 +1,6 @@
 import { Dummy } from "./components/Dummy";
 import { JobBoard } from "./components/JobBoard";
+import { ThemeToggle } from "./components/ThemeToggle";
 import { APPLY_EMAIL, DEADLINE, ROLES } from "./data/roles";
 
 export default function App() {
@@ -8,7 +9,10 @@ export default function App() {
       <header className="top">
         <div className="wrap">
           <a href="#"><img src={`${import.meta.env.BASE_URL}logo.svg`} alt="VOUCCOM" /></a>
-          <a className="btn" href="#roles">View open roles</a>
+          <div className="header-actions">
+            <ThemeToggle />
+            <a className="btn" href="#roles">View open roles</a>
+          </div>
         </div>
       </header>
 

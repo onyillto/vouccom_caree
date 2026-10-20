@@ -10,9 +10,12 @@
   --dummy: #d6286f;
   --dummy-bg: #ffe3ef;
   --radius: 14px;
+  color-scheme: light;
 }
+/* Dark theme: follows the OS by default; data-theme on <html> (set by ThemeToggle) overrides it. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --brand: #5c7dff;
     --brand-soft: rgba(92, 125, 255, 0.14);
     --bg: #1b1d21;
@@ -24,6 +27,19 @@
     --dummy: #ff7fb2;
     --dummy-bg: rgba(255, 92, 160, 0.16);
   }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --brand: #5c7dff;
+  --brand-soft: rgba(92, 125, 255, 0.14);
+  --bg: #1b1d21;
+  --surface: #25272c;
+  --card: #2b2e34;
+  --text: #edeef1;
+  --muted: #a3a8b4;
+  --border: #3a3e46;
+  --dummy: #ff7fb2;
+  --dummy-bg: rgba(255, 92, 160, 0.16);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -63,6 +79,15 @@ header.top {
 }
 header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 header.top img { height: 22px; }
+.header-actions { display: flex; align-items: center; gap: 10px; }
+.theme-toggle {
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border); cursor: pointer;
+  transition: background .2s;
+}
+.theme-toggle:hover { background: var(--brand-soft); color: var(--brand); }
+.theme-toggle svg { width: 18px; height: 18px; }
+body, .card, .pillar, header.top { transition: background-color .2s, color .2s; }
 .btn {
   display: inline-flex; align-items: center; gap: 6px;
   background: var(--brand); color: #fff; text-decoration: none;
@@ -152,6 +177,7 @@ h2 { font-size: 26px; margin: 0 0 16px; letter-spacing: -0.01em; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .badge-now { background: rgba(34, 160, 107, .18); color: #4ade80; }
 }
+:root[data-theme="dark"] .badge-now { background: rgba(34, 160, 107, .18); color: #4ade80; }
 .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: auto; }
 .actions .btn, .actions .btn-grey { justify-content: center; border-radius: 8px; padding: 12px 10px; }
 .btn-grey {
