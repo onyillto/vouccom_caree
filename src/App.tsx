@@ -1,3 +1,4 @@
+import { About } from "./components/About";
 import { Dummy } from "./components/Dummy";
 import { JobBoard } from "./components/JobBoard";
 import { ThemeToggle } from "./components/ThemeToggle";
@@ -32,28 +33,7 @@ export default function App() {
           <div className="legend"><Dummy>Pink text</Dummy> = placeholder. Confirm or replace it before publishing.</div>
         </div>
 
-        <section>
-          <div className="wrap about">
-            <div>
-              <h2>About VOUCCOM</h2>
-              <p>
-                VOUCCOM is a digital platform where users buy vouchers that enter them into transparent, independently
-                governed draws to win verified vehicles from reputable dealers.
-              </p>
-              <p>
-                We take trust seriously. We won't launch publicly until clear ownership is in place for licensing, draw
-                governance, payment reconciliation, fraud monitoring, data protection, customer complaints, vehicle
-                verification, information security and incident response.
-              </p>
-              <p>Every hire on this page owns part of that promise.</p>
-            </div>
-            <div className="pillars">
-              <div className="pillar"><strong>Transparent draws</strong><span>Governed, auditable and broadcast live.</span></div>
-              <div className="pillar"><strong>Verified vehicles</strong><span>Independently inspected and accurately listed.</span></div>
-              <div className="pillar"><strong>Regulated by design</strong><span>Licensing, AML/KYC and consumer protection come first.</span></div>
-            </div>
-          </div>
-        </section>
+        <About />
 
         <JobBoard />
 
