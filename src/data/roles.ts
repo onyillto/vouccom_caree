@@ -68,25 +68,6 @@ const RAW_ROLES: RawRole[] = [
     nice: ["Experience with wallets, payments, gaming or marketplaces", "Familiarity with Nigerian payment rails"]
   },
   {
-    title: "Technical Lead / Full-Stack Engineer", team: "Product & Engineering", wave: 1,
-    type: "Full-time or contract", reports: "Head of Product",
-    summary: "Lead platform development, integrations, code quality, deployment and technical architecture.",
-    resp: [
-      "Own the technical architecture of the VOUCCOM platform",
-      "Build and review features across frontend and backend",
-      "Lead integrations with payment, KYC and messaging providers",
-      "Set code-quality standards, review practices and the release process",
-      "Guide additional frontend and backend engineers, whether employees or contractors"
-    ],
-    req: [
-      "6+ years of full-stack engineering experience",
-      "Strong with modern JavaScript/TypeScript, React/Next.js and a backend stack",
-      "Experience designing secure systems that handle money or sensitive data",
-      "Experience leading or mentoring engineers"
-    ],
-    nice: ["Experience integrating Paystack or similar payment providers", "Background in auditable or provably fair systems"]
-  },
-  {
     title: "DevOps & Cybersecurity Engineer", team: "Product & Engineering", wave: 1,
     type: "Full-time", reports: "Technical Lead",
     summary: "Keep VOUCCOM's infrastructure available, secure, monitored and recoverable.",
@@ -285,7 +266,6 @@ const RAW_ROLES: RawRole[] = [
 const META: [string, IconName, number, Level][] = [
   ["#2b2e83", "briefcase", 7, "Executive"],
   ["#e8705a", "layers", 5, "Senior"],
-  ["#1d1d1f", "code", 6, "Senior"],
   ["#2855ff", "shield", 4, "Senior"],
   ["#4ba0c6", "check", 3, "Mid"],
   ["#eb8a44", "scale", 5, "Senior"],
