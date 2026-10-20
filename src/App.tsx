@@ -1,8 +1,7 @@
-import { About } from "./components/About";
 import { Dummy } from "./components/Dummy";
 import { JobBoard } from "./components/JobBoard";
 import { ThemeToggle } from "./components/ThemeToggle";
-import { APPLY_EMAIL, DEADLINE, ROLES } from "./data/roles";
+import { APPLY_EMAIL, DEADLINE } from "./data/roles";
 
 export default function App() {
   return (
@@ -18,22 +17,6 @@ export default function App() {
       </header>
 
       <main>
-        <div className="wrap hero">
-          <div className="eyebrow">Careers · Launch team</div>
-          <h1>Help us launch VOUCCOM safely, fairly and at scale.</h1>
-          <p>
-            We're building a small, cross-functional team in Lagos to run the platform, meet our regulatory
-            obligations, bring in vehicles and dealers, support our users and keep them coming back.
-          </p>
-          <div className="meta">
-            <span className="chip">📍 Lagos, Nigeria</span>
-            <span className="chip">{ROLES.length} open roles</span>
-            <span className="chip">Work model: <Dummy>Hybrid</Dummy></span>
-          </div>
-          <div className="legend"><Dummy>Pink text</Dummy> = placeholder. Confirm or replace it before publishing.</div>
-        </div>
-
-        <About />
 
         <JobBoard />
 
