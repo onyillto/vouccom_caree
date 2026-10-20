@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Careers at VOUCCOM</title>
+<meta name="description" content="Join the VOUCCOM launch team in Lagos. Open roles across product, engineering, compliance, operations, growth and customer experience." />
+<link rel="icon" href="assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --brand: #2855FF;
+    --brand-soft: rgba(40, 85, 255, 0.08);
+    --bg: #ffffff;
+    --surface: #f6f7f9;
+    --card: #ffffff;
+    --text: #171717;
+    --muted: #5d6270;
+    --border: #e4e6eb;
+    --dummy: #d6286f;
+    --dummy-bg: #ffe3ef;
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --brand: #5c7dff;
+      --brand-soft: rgba(92, 125, 255, 0.14);
+      --bg: #1b1d21;
+      --surface: #25272c;
+      --card: #2b2e34;
+      --text: #edeef1;
+      --muted: #a3a8b4;
+      --border: #3a3e46;
+      --dummy: #ff7fb2;
+      --dummy-bg: rgba(255, 92, 160, 0.16);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--brand); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+  /* Dummy / placeholder data marker */
+  .dummy {
+    color: var(--dummy);
+    background: var(--dummy-bg);
+    border-radius: 4px;
+    padding: 0 4px;
+    font-weight: 500;
+  }
+  .legend {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--muted);
+    background: var(--surface); border: 1px dashed var(--dummy);
+    border-radius: 10px; padding: 8px 12px; margin-top: 20px;
+    width: fit-content;
+  }
+
+  header.top {
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(8px);
+  }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  header.top img { height: 22px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--brand); color: #fff; text-decoration: none;
+    padding: 10px 16px; border-radius: 999px; font-weight: 600; font-size: 14px;
+    border: 0; cursor: pointer;
+  }
+  .btn.ghost { background: transparent; color: var(--brand); border: 1px solid var(--brand); }
+
+  .hero { padding: 64px 0 40px; }
+  .eyebrow { color: var(--brand); font-weight: 600; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; }
+  .hero h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin: 10px 0 16px; letter-spacing: -0.02em; }
+  .hero p { font-size: 18px; color: var(--muted); max-width: 680px; margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .chip {
+    font-size: 13px; padding: 6px 12px; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--border); color: var(--text);
+  }
+
+  section { padding: 40px 0; }
+  h2 { font-size: 26px; margin: 0 0 16px; letter-spacing: -0.01em; }
+  .about { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; }
+  .about p { color: var(--muted); margin: 0 0 12px; }
+  .pillars { display: grid; gap: 12px; }
+  .pillar { background: var(--surface); border-radius: var(--radius); padding: 16px; }
+  .pillar strong { display: block; margin-bottom: 2px; }
+  .pillar span { color: var(--muted); font-size: 14px; }
+
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 20px; }
+  .toolbar input {
+    flex: 1 1 220px; min-width: 0;
+    padding: 10px 14px; border-radius: 999px; border: 1px solid var(--border);
+    background: var(--card); color: var(--text); font: inherit; font-size: 14px;
+  }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+  .filters button {
+    font: inherit; font-size: 13px; padding: 7px 14px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--card); color: var(--text); cursor: pointer;
+  }
+  .filters button[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+  .count { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+  .jobs { display: grid; gap: 12px; }
+  details.job {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    overflow: hidden;
+  }
+  details.job[open] { border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
+  details.job summary {
+    list-style: none; cursor: pointer; padding: 18px 20px;
+    display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; align-items: center;
+  }
+  details.job summary::-webkit-details-marker { display: none; }
+  .job-title { font-weight: 600; font-size: 17px; }
+  .job-tags { display: flex; flex-wrap: wrap; gap: 6px; grid-column: 1 / 2; }
+  .tag { font-size: 12px; padding: 3px 9px; border-radius: 999px; background: var(--surface); color: var(--muted); }
+  .tag.wave1 { background: var(--brand-soft); color: var(--brand); font-weight: 600; }
+  .chev { grid-row: 1 / 3; grid-column: 2; transition: transform .2s; color: var(--muted); }
+  details[open] .chev { transform: rotate(180deg); }
+
+  .job-body { padding: 0 20px 22px; border-top: 1px solid var(--border); }
+  .job-body .facts {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px; margin: 18px 0; padding: 14px; background: var(--surface); border-radius: 10px;
+  }
+  .facts div { font-size: 14px; }
+  .facts small { display: block; color: var(--muted); font-size: 12px; margin-bottom: 2px; }
+  .job-body h4 { margin: 18px 0 6px; font-size: 15px; }
+  .job-body p { margin: 0; color: var(--muted); }
+  .job-body ul { margin: 0; padding-left: 20px; }
+  .job-body li { margin: 4px 0; }
+  .apply-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; align-items: center; }
+
+  .offer { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .offer .pillar span { display: block; }
+
+  .how ol { padding-left: 20px; color: var(--muted); }
+  .how li { margin: 6px 0; }
+  .callout {
+    background: var(--brand); color: #fff; border-radius: 20px; padding: 32px;
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
+  }
+  .callout h3 { margin: 0 0 4px; font-size: 22px; }
+  .callout p { margin: 0; opacity: .9; }
+  .callout .btn { background: #fff; color: var(--brand); }
+  .callout .dummy { background: rgba(255,255,255,.9); }
+
+  footer { border-top: 1px solid var(--border); padding: 24px 0 40px; color: var(--muted); font-size: 13px; }
+  .empty { padding: 24px; text-align: center; color: var(--muted); border: 1px dashed var(--border); border-radius: var(--radius); }
+
+  @media (max-width: 760px) {
+    .about { grid-template-columns: 1fr; }
+    .hero { padding: 40px 0 24px; }
+    details.job summary { padding: 16px; }
+    .job-body { padding: 0 16px 18px; }
+    .callout { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#"><img src="assets/logo.svg" alt="VOUCCOM" /></a>
+    <a class="btn" href="#roles">View open roles</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="eyebrow">Careers · Launch team</div>
+    <h1>Help us launch VOUCCOM safely, fairly and at scale.</h1>
+    <p>We're building a small, cross-functional team in Lagos to run the platform, meet our regulatory obligations, bring in vehicles and dealers, support our users and keep them coming back.</p>
+    <div class="meta">
+      <span class="chip">📍 Lagos, Nigeria</span>
+      <span class="chip" id="roleCountChip">14 open roles</span>
+      <span class="chip">Work model: <span class="dummy">Hybrid</span></span>
+    </div>
+    <div class="legend"><span class="dummy">Pink text</span> = placeholder. Confirm or replace it before publishing.</div>
+  </div>
+
+  <section>
+    <div class="wrap about">
+      <div>
+        <h2>About VOUCCOM</h2>
+        <p>VOUCCOM is a digital platform where users buy vouchers that enter them into transparent, independently governed draws to win verified vehicles from reputable dealers.</p>
+        <p>We take trust seriously. We won't launch publicly until clear ownership is in place for licensing, draw governance, payment reconciliation, fraud monitoring, data protection, customer complaints, vehicle verification, information security and incident response.</p>
+        <p>Every hire on this page owns part of that promise.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><strong>Transparent draws</strong><span>Governed, auditable and broadcast live.</span></div>
+        <div class="pillar"><strong>Verified vehicles</strong><span>Independently inspected and accurately listed.</span></div>
+        <div class="pillar"><strong>Regulated by design</strong><span>Licensing, AML/KYC and consumer protection come first.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roles">
+    <div class="wrap">
+      <h2>Open roles</h2>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search roles…" aria-label="Search roles" />
+      </div>
+      <div class="toolbar">
+        <div class="filters" id="filters" role="group" aria-label="Filter by team"></div>
+      </div>
+      <div class="count" id="count"></div>
+      <div class="jobs" id="jobs"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What we offer</h2>
+      <div class="offer">
+        <div class="pillar"><strong>Competitive pay</strong><span class="dummy">Salary bands shared at interview stage</span></div>
+        <div class="pillar"><strong>Health cover</strong><span class="dummy">HMO for you and dependants</span></div>
+        <div class="pillar"><strong>Flexible work</strong><span class="dummy">Hybrid schedule from our Lagos office</span></div>
+        <div class="pillar"><strong>Early-team impact</strong><span>Shape how a regulated consumer platform launches from day one.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <h2>How to apply</h2>
+      <ol>
+        <li>Send your CV and a short note on why the role fits you to <span class="dummy">careers@vouccom.com</span>.</li>
+        <li>Put the role title in the email subject, e.g. “Application – QA Engineer”.</li>
+        <li>Applications close on <span class="dummy">30 November 2026</span>. We review them on a rolling basis.</li>
+        <li>Process: <span class="dummy">intro call → skills assessment → panel interview → offer</span>.</li>
+      </ol>
+      <div class="callout" style="margin-top:24px">
+        <div>
+          <h3>Don't see your role?</h3>
+          <p>Send us your CV anyway. We'll be hiring more people as we grow.</p>
+        </div>
+        <a class="btn" href="mailto:careers@vouccom.com"><span class="dummy">careers@vouccom.com</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 VOUCCOM · Lagos, Nigeria · VOUCCOM is an equal-opportunity employer.</div>
+</footer>
+
+<script>
+  // Placeholder values (shown in pink): replace before publishing.
+  const APPLY_EMAIL = "careers@vouccom.com";
+  const DEADLINE = "30 November 2026";
+
+  const ROLES = [
+    {
+      title: "Chief Operating Officer / Operations Manager", team: "Leadership", wave: 1,
+      type: "Full-time", reports: "Managing Director / CEO",
+      summary: "Design and run VOUCCOM's day-to-day operations: listings, draws, vendors and on-time prize delivery.",
+      resp: [
+        "Design and document daily operating procedures for listings, draws and prize fulfilment",
+        "Coordinate the listing and draw calendar across product, dealers and content teams",
+        "Manage vendors and partners, including inspection, logistics and payment providers",
+        "Make sure every prize is delivered on schedule and properly documented",
+        "Set operational KPIs and report on them to leadership",
+        "Work with compliance to make sure operations meet licensing and consumer-protection rules"
+      ],
+      req: [
+        "7+ years in operations, including at least 3 years in a leadership role",
+        "Experience running multi-party processes in a regulated or high-trust business",
+        "Strong vendor management and process design skills",
+        "Comfortable working in a fast-moving, early-stage environment"
+      ],
+      nice: ["Background in gaming, promotions, automotive or fintech", "Experience launching a new business in Nigeria"]
+    },
+    {
+      title: "Head of Product", team: "Product & Engineering", wave: 1,
+      type: "Full-time", reports: "Managing Director / CEO",
+      summary: "Turn the business model into a product roadmap, and own the user, dealer, wallet, draw, claims and admin experiences.",
+      resp: [
+        "Own the product vision and roadmap across all VOUCCOM surfaces",
+        "Define requirements for onboarding, wallet, vouchers, draws, claims, dealer tools and administration",
+        "Prioritise work with engineering, compliance and operations",
+        "Build compliance, fraud and responsible-participation controls into the product",
+        "Set product metrics and use data and user research to make decisions"
+      ],
+      req: [
+        "5+ years in product management for consumer or fintech products",
+        "Proven record of shipping web and mobile products from zero to one",
+        "Able to turn regulatory and operational requirements into clear specs",
+        "Strong written communication and stakeholder management"
+      ],
+      nice: ["Experience with wallets, payments, gaming or marketplaces", "Familiarity with Nigerian payment rails"]
+    },
+    {
+      title: "Technical Lead / Full-Stack Engineer", team: "Product & Engineering", wave: 1,
+      type: "Full-time or contract", reports: "Head of Product",
+      summary: "Lead platform development, integrations, code quality, deployment and technical architecture.",
+      resp: [
+        "Own the technical architecture of the VOUCCOM platform",
+        "Build and review features across frontend and backend",
+        "Lead integrations with payment, KYC and messaging providers",
+        "Set code-quality standards, review practices and the release process",
+        "Guide additional frontend and backend engineers, whether employees or contractors"
+      ],
+      req: [
+        "6+ years of full-stack engineering experience",
+        "Strong with modern JavaScript/TypeScript, React/Next.js and a backend stack",
+        "Experience designing secure systems that handle money or sensitive data",
+        "Experience leading or mentoring engineers"
+      ],
+      nice: ["Experience integrating Paystack or similar payment providers", "Background in auditable or provably fair systems"]
+    },
+    {
+      title: "DevOps & Cybersecurity Engineer", team: "Product & Engineering", wave: 1,
+      type: "Full-time", reports: "Technical Lead",
+      summary: "Keep VOUCCOM's infrastructure available, secure, monitored and recoverable.",
+      resp: [
+        "Maintain cloud infrastructure, CI/CD and environment management",
+        "Own uptime, monitoring, alerting and backups",
+        "Run access controls and secrets management, following least-privilege principles",
+        "Lead incident response and post-incident reviews",
+        "Arrange regular security testing and fix the issues it finds"
+      ],
+      req: [
+        "4+ years in DevOps, SRE or security engineering",
+        "Hands-on experience with a major cloud provider and infrastructure-as-code",
+        "Solid understanding of application and network security",
+        "Experience setting up observability and incident processes"
+      ],
+      nice: ["Security certifications such as OSCP, CISSP or cloud security", "Experience with NDPR/NDPA compliance"]
+    },
+    {
+      title: "Quality Assurance Engineer", team: "Product & Engineering", wave: 1,
+      type: "Full-time", reports: "Technical Lead",
+      summary: "Make sure every release is safe: test onboarding, payments, vouchers, draw logic, claims and dealer workflows.",
+      resp: [
+        "Plan and run test cycles before every release",
+        "Test critical flows: onboarding, payments, voucher issuance, draw logic, claims and dealer tools",
+        "Build and maintain automated test suites",
+        "Log, track and verify defects with the engineering team",
+        "Keep test evidence for audit and compliance purposes"
+      ],
+      req: [
+        "3+ years in QA for web or mobile applications",
+        "Experience with manual and automated testing tools",
+        "Strong attention to detail, especially around money flows and edge cases"
+      ],
+      nice: ["Experience testing payment or wallet systems", "Familiarity with Playwright, Cypress or similar"]
+    },
+    {
+      title: "Legal & Regulatory Compliance Manager", team: "Risk & Compliance", wave: 1,
+      type: "Full-time", reports: "Managing Director / CEO",
+      summary: "Own licensing, consumer protection, contracts, responsible participation and regulator relationships.",
+      resp: [
+        "Manage gaming or promotional-competition licensing and renewals",
+        "Make sure we meet consumer-protection and data-protection requirements",
+        "Draft and review contracts with dealers, vendors and partners",
+        "Design responsible-participation controls with the product team",
+        "Prepare regulator reports and legally review product, marketing and terms"
+      ],
+      req: [
+        "Qualified lawyer called to the Nigerian Bar",
+        "5+ years in regulatory, gaming, fintech or consumer-protection practice",
+        "Experience dealing directly with regulators"
+      ],
+      nice: ["Experience with Lagos State or national lottery/gaming regulators", "Data-protection certification"]
+    },
+    {
+      title: "Finance & Reconciliation Manager", team: "Risk & Compliance", wave: 1,
+      type: "Full-time", reports: "Managing Director / CEO",
+      summary: "Oversee budgeting, cash flow, accounting, tax, wallet and payment reconciliation, dealer settlements and prize funding.",
+      resp: [
+        "Own budgeting, cash flow, accounting and tax compliance",
+        "Run daily reconciliation of wallets, payments and the payment-provider ledger",
+        "Manage dealer settlements and prize funding",
+        "Produce management reports and support audits",
+        "Set up financial controls for a high-volume transactional platform"
+      ],
+      req: [
+        "Qualified accountant (ICAN, ACCA or equivalent)",
+        "5+ years in finance, including reconciliation of high-volume transactions",
+        "Strong Excel and accounting-software skills"
+      ],
+      nice: ["Fintech, gaming or e-commerce background", "Experience working with payment processors"]
+    },
+    {
+      title: "AML, KYC & Fraud Risk Analyst", team: "Risk & Compliance", wave: 2,
+      type: "Full-time", reports: "Legal & Regulatory Compliance Manager",
+      summary: "Protect the platform and its users by reviewing identity checks, transaction alerts and fraud cases.",
+      resp: [
+        "Review KYC and identity-verification outcomes",
+        "Investigate transaction alerts and suspicious activity, and escalate where needed",
+        "Run sanctions screening",
+        "Detect and act on account abuse and chargebacks",
+        "Work fraud cases with our payment partners"
+      ],
+      req: [
+        "3+ years in AML, KYC or fraud operations",
+        "Knowledge of Nigerian AML/CFT requirements",
+        "Analytical, discreet and well organised"
+      ],
+      nice: ["ACAMS or similar certification", "Experience with case-management or fraud tooling"]
+    },
+    {
+      title: "Dealer Partnerships & Vehicle Sourcing Manager", team: "Supply", wave: 2,
+      type: "Full-time", reports: "Chief Operating Officer",
+      summary: "Recruit reputable dealers, negotiate terms and keep a steady supply of quality vehicles.",
+      resp: [
+        "Find and onboard reputable dealers",
+        "Negotiate commercial terms and manage dealer relationships",
+        "Maintain a steady pipeline of listings",
+        "Coordinate vehicle documentation and availability"
+      ],
+      req: [
+        "4+ years in automotive sales, partnerships or sourcing",
+        "Strong network among dealers in Lagos and across Nigeria",
+        "Excellent negotiation skills"
+      ],
+      nice: ["Experience in marketplace or B2B2C partnerships"]
+    },
+    {
+      title: "Vehicle Inspection & Listing Officer", team: "Supply", wave: 2,
+      type: "Full-time", reports: "Dealer Partnerships & Vehicle Sourcing Manager",
+      summary: "Make sure every vehicle we list is real, verified and accurately described.",
+      resp: [
+        "Coordinate independent vehicle inspections",
+        "Validate vehicle records and documentation",
+        "Prepare accurate specifications for each listing",
+        "Confirm listing content meets our quality standards before it goes live"
+      ],
+      req: [
+        "2+ years in vehicle inspection, valuation or automotive operations",
+        "Strong knowledge of vehicle documentation in Nigeria",
+        "Meticulous attention to detail"
+      ],
+      nice: ["Mechanical or automotive engineering background"]
+    },
+    {
+      title: "Growth Marketing Manager", team: "Growth", wave: 2,
+      type: "Full-time", reports: "Managing Director / CEO",
+      summary: "Lead user acquisition, referrals, retention and performance marketing while tracking acquisition cost closely.",
+      resp: [
+        "Plan and run acquisition campaigns across paid and organic channels",
+        "Design referral and retention programmes",
+        "Run performance marketing and track customer-acquisition cost",
+        "Work with compliance so all marketing meets responsible-participation rules"
+      ],
+      req: [
+        "4+ years in growth or performance marketing for consumer apps",
+        "Data-driven, with hands-on experience in analytics and attribution tools",
+        "Track record of hitting acquisition and retention targets"
+      ],
+      nice: ["Experience marketing regulated products in Nigeria"]
+    },
+    {
+      title: "Content, Social Media & Live Events Producer", team: "Growth", wave: 2,
+      type: "Full-time", reports: "Growth Marketing Manager",
+      summary: "Make VOUCCOM visible and transparent through vehicle reviews, social content and live draws.",
+      resp: [
+        "Produce vehicle review content",
+        "Manage our social media channels",
+        "Run live draws and record prize presentations",
+        "Keep a transparent, public archive of draw and winner content"
+      ],
+      req: [
+        "3+ years in content production or social media",
+        "Experience producing live streams or events",
+        "Confident on camera, or comfortable directing talent"
+      ],
+      nice: ["Automotive content experience", "Video editing skills"]
+    },
+    {
+      title: "Customer Experience Lead", team: "Customer Experience", wave: 2,
+      type: "Full-time", reports: "Chief Operating Officer",
+      summary: "Build our support function: standards, knowledge base, escalation paths and complaint handling.",
+      resp: [
+        "Set support standards and service-level targets",
+        "Build and maintain help content and the knowledge base",
+        "Define escalation paths and the complaint-management process",
+        "Report on service quality, and lead and coach Support Officers"
+      ],
+      req: [
+        "4+ years in customer support, including people management",
+        "Experience setting up support tools and processes",
+        "Knowledge of consumer-complaint handling requirements"
+      ],
+      nice: ["Fintech or gaming support background"]
+    },
+    {
+      title: "Customer Support Officers", team: "Customer Experience", wave: 2,
+      type: "Full-time · multiple openings", reports: "Customer Experience Lead",
+      summary: "Help users and dealers with onboarding, wallets, vouchers, draws and claims.",
+      resp: [
+        "Answer onboarding questions across our approved channels",
+        "Resolve wallet and voucher issues",
+        "Handle draw enquiries and support claims",
+        "Log and escalate user and dealer complaints"
+      ],
+      req: [
+        "1+ year in customer support",
+        "Excellent written and spoken English",
+        "Patient, empathetic and well organised"
+      ],
+      nice: ["Fluency in Yoruba, Igbo or Hausa", "Experience with helpdesk tools"]
+    }
+  ];
+
+  const TEAMS = ["All", ...new Set(ROLES.map(r => r.team))];
+  let activeTeam = "All";
+  let query = "";
+
+  const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const list = items => `<ul>${items.map(i => `<li>${esc(i)}</li>`).join("")}</ul>`;
+
+  function render() {
+    const q = query.trim().toLowerCase();
+    const shown = ROLES.filter(r =>
+      (activeTeam === "All" || r.team === activeTeam) &&
+      (!q || (r.title + " " + r.summary + " " + r.team).toLowerCase().includes(q))
+    );
+    document.getElementById("count").textContent = `${shown.length} role${shown.length === 1 ? "" : "s"}`;
+    document.getElementById("jobs").innerHTML = shown.length ? shown.map(r => `
+      <details class="job">
+        <summary>
+          <span class="job-title">${esc(r.title)}</span>
+          <svg class="chev" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="job-tags">
+            <span class="tag">${esc(r.team)}</span>
+            <span class="tag">Lagos</span>
+            <span class="tag">${esc(r.type)}</span>
+            ${r.wave === 1 ? '<span class="tag wave1">Hiring now</span>' : '<span class="tag">Pre-launch</span>'}
+          </span>
+        </summary>
+        <div class="job-body">
+          <div class="facts">
+            <div><small>Location</small>Lagos, Nigeria · <span class="dummy">Hybrid</span></div>
+            <div><small>Reports to</small>${esc(r.reports)}</div>
+            <div><small>Salary</small><span class="dummy">Competitive, discussed at interview</span></div>
+            <div><small>Start date</small><span class="dummy">${r.wave === 1 ? "Immediate" : "Q1 2027"}</span></div>
+          </div>
+          <h4>The role</h4>
+          <p>${esc(r.summary)}</p>
+          <h4>What you'll do</h4>
+          ${list(r.resp)}
+          <h4>What you'll bring</h4>
+          ${list(r.req)}
+          <h4>Nice to have</h4>
+          ${list(r.nice)}
+          <div class="apply-row">
+            <a class="btn" href="mailto:${APPLY_EMAIL}?subject=${encodeURIComponent("Application – " + r.title)}">Apply for this role</a>
+            <span style="color:var(--muted);font-size:14px">Closes <span class="dummy">${DEADLINE}</span></span>
+          </div>
+        </div>
+      </details>`).join("") : '<div class="empty">No roles match your search.</div>';
+  }
+
+  const filtersEl = document.getElementById("filters");
+  filtersEl.innerHTML = TEAMS.map(t => `<button type="button" data-team="${esc(t)}" aria-pressed="${t === activeTeam}">${esc(t)}</button>`).join("");
+  filtersEl.addEventListener("click", e => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    activeTeam = b.dataset.team;
+    filtersEl.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    render();
+  });
+  document.getElementById("search").addEventListener("input", e => { query = e.target.value; render(); });
+  document.getElementById("roleCountChip").textContent = `${ROLES.length} open roles`;
+  render();
+</script>
+</body>
+</html>
