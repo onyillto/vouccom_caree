@@ -68,25 +68,6 @@ const RAW_ROLES: RawRole[] = [
     nice: ["Experience with wallets, payments, gaming or marketplaces", "Familiarity with Nigerian payment rails"]
   },
   {
-    title: "DevOps & Cybersecurity Engineer", team: "Product & Engineering", wave: 1,
-    type: "Full-time", reports: "Technical Lead",
-    summary: "Keep VOUCCOM's infrastructure available, secure, monitored and recoverable.",
-    resp: [
-      "Maintain cloud infrastructure, CI/CD and environment management",
-      "Own uptime, monitoring, alerting and backups",
-      "Run access controls and secrets management, following least-privilege principles",
-      "Lead incident response and post-incident reviews",
-      "Arrange regular security testing and fix the issues it finds"
-    ],
-    req: [
-      "4+ years in DevOps, SRE or security engineering",
-      "Hands-on experience with a major cloud provider and infrastructure-as-code",
-      "Solid understanding of application and network security",
-      "Experience setting up observability and incident processes"
-    ],
-    nice: ["Security certifications such as OSCP, CISSP or cloud security", "Experience with NDPR/NDPA compliance"]
-  },
-  {
     title: "Quality Assurance Engineer", team: "Product & Engineering", wave: 1,
     type: "Full-time", reports: "Technical Lead",
     summary: "Make sure every release is safe: test onboarding, payments, vouchers, draw logic, claims and dealer workflows.",
@@ -266,7 +247,6 @@ const RAW_ROLES: RawRole[] = [
 const META: [string, IconName, number, Level][] = [
   ["#2b2e83", "briefcase", 7, "Executive"],
   ["#e8705a", "layers", 5, "Senior"],
-  ["#2855ff", "shield", 4, "Senior"],
   ["#4ba0c6", "check", 3, "Mid"],
   ["#eb8a44", "scale", 5, "Senior"],
   ["#d9573a", "wallet", 5, "Senior"],
